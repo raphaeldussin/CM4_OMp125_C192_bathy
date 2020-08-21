@@ -16,7 +16,6 @@ bathy:
     - conda env create --file repro-pan.yml
     - . activate repro
     - conda list -e
-    #- cp /archive/gold/datasets/topography/GEBCO_2020/GEBCO_2020.nc4 ./GEBCO_2020.nc
   script:
     - export PATH=`pwd`/local_env/bin:$PATH
     - export PATH=`pwd`/local_env/envs/repro/bin:$PATH
@@ -26,4 +25,4 @@ bathy:
     # niki's notebook/script
     - papermill OM4p125_edit_topo.ipynb output_step2.ipynb
     - papermill bedmachine_iceshelves_mask.ipynb output_step3.ipynb
-    #- md5sum -c checksums.txt
+    - md5sum -c checksums.txt
