@@ -26,3 +26,5 @@ bathy:
     - papermill OM4p125_edit_topo.ipynb output_step2.ipynb
     - papermill bedmachine_iceshelves_mask.ipynb output_step3.ipynb
     - md5sum -c checksums.txt
+    - papermill Create_ocean_mask.ipynb output_step4.ipynb
+    - md5sum -c checksums_masks.txt
