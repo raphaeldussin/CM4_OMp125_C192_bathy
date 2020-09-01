@@ -1,3 +1,2 @@
-14b5aaef784a1b6aca87ab92498ef262  ocean_hgrid.nc
-eef1377695426e0ded21a186f512a572  ocean_mask.nc
+eef1377695426e0ded21a186f512a572  ocean_mask_iceshelves.nc
 ba3ea141c41a2462250b93ffd652e2df  ocean_mask_noiceshelves.nc

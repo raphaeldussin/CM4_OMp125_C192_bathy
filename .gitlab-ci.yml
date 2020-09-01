@@ -16,9 +16,20 @@ bathy:
     - conda env create --file repro-pan.yml
     - . activate repro
     - conda list -e
+    - git clone https://github.com/NOAA-GFDL/FRE-NCtools
+    - pushd FRE-NCtools
+    - here=$(pwd)
+    - export CONFIG_SITE=${here}/site-configs/gfdl-ws/config.site
+    - source ${here}/site-configs/gfdl-ws/env.sh
+    - autoreconf -i
+    - ./configure --prefix=${here}
+    - make
+    - make install
+    - popd
   script:
     - export PATH=`pwd`/local_env/bin:$PATH
     - export PATH=`pwd`/local_env/envs/repro/bin:$PATH
+    - export PATH=`pwd`/FRE-NCtools/bin:$PATH
     - . activate repro
     - python -m ipykernel install --user --name repro --display-name "Py3-repro"
     - conda info -e
@@ -28,3 +39,5 @@ bathy:
     - md5sum -c checksums.txt
     - papermill Create_ocean_mask.ipynb output_step4.ipynb
     - md5sum -c checksums_masks.txt
+    - ./create_mosaic.bash
+    - md5sum -c checksums_FRENCtools.txt

@@ -15,3 +15,6 @@ dependencies:
   - xesmf=0.3.0
   - seaborn
   - cmocean
+  - pip
+  - pip:
+    - git+https://github.com/nikizadehgfdl/ocean_model_topog_generator.git
