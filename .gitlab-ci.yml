@@ -19,8 +19,8 @@ bathy:
     - git clone https://github.com/NOAA-GFDL/FRE-NCtools
     - pushd FRE-NCtools
     - here=$(pwd)
-    - export CONFIG_SITE=${here}/site-configs/gfdl-ws/config.site
-    - source ${here}/site-configs/gfdl-ws/env.sh
+    - export CONFIG_SITE=${here}/site-configs/gfdl/config.site
+    - source ${here}/site-configs/gfdl/env.sh
     - autoreconf -i
     - ./configure --prefix=${here}
     - make
